@@ -7,6 +7,10 @@ func main() {
 	fmt.Println(average(1, 2, 4, 5.6))
 	data := []float64{2, 5, 9}
 	fmt.Println(average(data...))
+
+	visit([]int{1, 2, 3}, func(arg2 int) {
+		fmt.Println(arg2)
+	})
 }
 
 func greet(name, name2 string) (string, string) {
@@ -21,4 +25,10 @@ func average(sf ...float64) float64 {
 	}
 
 	return total / float64(len(sf))
+}
+
+func visit(numbers []int, callback func(int)) {
+	for _, n := range numbers {
+		callback(n)
+	}
 }
