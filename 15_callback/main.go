@@ -9,6 +9,11 @@ func main() {
 	})
 
 	fmt.Println(xs)
+
+	abc := make([]string, 1, 25)
+	fmt.Println(abc)
+	passByRef(abc)
+	fmt.Println(abc)
 }
 
 func filter(numbers []int, callback func(int) bool) []int {
@@ -20,4 +25,8 @@ func filter(numbers []int, callback func(int) bool) []int {
 	}
 
 	return xs
+}
+
+func passByRef(str []string) {
+	str[0] = "test"
 }
